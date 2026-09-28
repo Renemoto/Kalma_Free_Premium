@@ -62,10 +62,10 @@ Antes de la primera línea de lógica, el repositorio ya impide romper la regla 
   - [x] Referencias: Application → Domain; Infrastructure → Application; Api → Infrastructure y Application
   - [x] `dotnet build` y `dotnet test` pasan
   - [x] `kalma-arquitectura.md` copiado a `docs/`
-- [ ] **KAL-002 · Test de arquitectura** — ADR-29 · S · requiere KAL-001
-  - [ ] Falla si Kalma.Domain referencia EF Core, ASP.NET o Infrastructure (p. ej. NetArchTest.Rules)
-  - [ ] Falla si Application referencia Infrastructure
-  - [ ] Romperlo a propósito una vez y ver el rojo
+- [x] **KAL-002 · Test de arquitectura** — ADR-29 · S · requiere KAL-001
+  - [x] Falla si Kalma.Domain referencia EF Core, ASP.NET o Infrastructure (p. ej. NetArchTest.Rules)
+  - [x] Falla si Application referencia Infrastructure
+  - [x] Romperlo a propósito una vez y ver el rojo
 - [ ] **KAL-003 · Integración continua** — S · requiere KAL-002
   - [ ] GitHub Actions compila y ejecuta todos los tests en cada push
   - [ ] Un test en rojo impide fusionar en `main`
