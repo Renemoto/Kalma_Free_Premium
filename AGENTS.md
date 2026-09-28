@@ -1,6 +1,6 @@
 # Kalma — Instrucciones de trabajo
 
-Kalma es una PWA B2C para que una familia y una cuidadora coordinen el cuidado diario de una persona dependiente en España. El MVP es gratuito. Por ahora, este directorio contiene documentación de planificación, no la aplicación descrita abajo.
+Kalma es una PWA B2C para que una familia y una cuidadora coordinen el cuidado diario de una persona dependiente en España. El MVP es gratuito. Por ahora, este directorio contiene documentación de planificación y cimientos iniciales, no la aplicación completa descrita abajo.
 
 ## Fuentes de referencia
 
@@ -26,6 +26,6 @@ Kalma es una PWA B2C para que una familia y una cuidadora coordinen el cuidado d
 
 ## Punto de partida y comprobaciones
 
-- Empezar por los cimientos de la fase 0 de `backlog.md` (`KAL-001` en adelante). No suponer que ya existen `backend/`, `web/`, CI ni ejecutores de tests.
+- Empezar por los cimientos de la fase 0 de `backlog.md` (`KAL-001` en adelante). No suponer que ya existen todos los proyectos, scripts o ejecutores descritos en la planificación.
 - Después de `KAL-001`, ejecutar `dotnet build` y `dotnet test` en backend. Después de `KAL-004`, ejecutar los scripts configurados de tests y lint del frontend. Desde `KAL-002`, mantener verde el test de arquitectura; desde `KAL-003`, exigir los controles de CI. Consultar los comandos reales en los proyectos creados en vez de adivinarlos.
 - El primer trabajo TDD de dominio cubre tramos y día de cuidado (`KAL-010`) y valores del checklist (`KAL-011`) antes de implementar `Parte` (`KAL-012`). El primer hito es registrar un parte desde el móvil, incluso después de perder la conexión (`KAL-084`).
