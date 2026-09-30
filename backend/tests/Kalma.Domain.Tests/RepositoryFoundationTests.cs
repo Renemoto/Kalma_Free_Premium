@@ -30,7 +30,7 @@ public sealed class RepositoryFoundationTests
     }
 
     [Fact]
-    public void Projects_target_net8_and_reference_only_the_required_inward_projects()
+    public void Projects_target_net10_and_reference_only_the_required_inward_projects()
     {
         AssertProject("backend/src/Kalma.Domain/Kalma.Domain.csproj", []);
         AssertProject("backend/src/Kalma.Application/Kalma.Application.csproj", ["../Kalma.Domain/Kalma.Domain.csproj"]);
@@ -64,7 +64,7 @@ public sealed class RepositoryFoundationTests
         var project = XDocument.Load(Path.Combine(RepositoryRoot, relativePath));
         var properties = project.Descendants("PropertyGroup").SelectMany(group => group.Elements())
             .ToDictionary(element => element.Name.LocalName, element => element.Value);
-        Assert.Equal("net8.0", properties["TargetFramework"]);
+        Assert.Equal("net10.0", properties["TargetFramework"]);
         Assert.Equal(isTest ? "true" : null, properties.GetValueOrDefault("IsTestProject"));
 
         var references = project.Descendants("ProjectReference")
