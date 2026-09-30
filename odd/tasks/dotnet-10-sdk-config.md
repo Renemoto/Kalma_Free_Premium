@@ -14,7 +14,8 @@ Port only useful SDK-selection configuration from the local .NET 10 migration on
 ## Evidence
 - Remote main project tree at Git root has four source and three test projects already targeting net10.0, architecture tests, and `.github/workflows/backend-ci.yml` installing 10.0.x. No global.json or backend README. Original local branch lives in unrelated parent-root history and must not be pushed as-is.
 - Delegated writer added only `global.json` (10.0.100, latestFeature) and `backend/README.md` with user-local SDK instructions; seven project files and CI untouched. Direct check selected SDK 10.0.401 and the full build passed with 0 warnings/errors; full test suite passed 5/5. Parent spot check `dotnet test backend/Kalma.sln --no-restore` passed 5/5. No artificial failing test was added for this config/doc-only change.
-- Native review: pending work-unit commit. Push: pending.
+- Work-unit commit: `cf62e7270a85e1d3d59e622f0bd17b760c3b4676` (`build: pin compatible .NET 10 SDK for backend`), 37 added lines across three files, based on remote main. Native `assess` was unassessable (schema-incompatible), but explicit committed-range START selected medium risk with `review-reliability`; reviewer capture closed approved and exact acknowledgement burned its authority for lineage `review-5d8f2716af6e0c2f` and this commit. Parent test spot check 5/5 passed. CI result after publication remains pending; no PR or merge authorized.
+- Push: pending. Delivery remains ordinary repository policy, not authorized by the review outcome.
 
 ## Next step
-Commit the verified change, assess and inspect native review for that commit, then publish only `feat/dotnet-10-sdk-config` if no blocking review outcome.
+Publish only `feat/dotnet-10-sdk-config`, verify the remote branch points to the committed result, then close this task.
