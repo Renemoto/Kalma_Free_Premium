@@ -67,7 +67,7 @@ Antes de la primera línea de lógica, el repositorio ya impide romper la regla 
   - [x] Falla si Application referencia Infrastructure
   - [x] Romperlo a propósito una vez y ver el rojo
 - [ ] **KAL-003 · Integración continua** — S · requiere KAL-002
-  - [ ] GitHub Actions compila y ejecuta todos los tests en cada push
+  - [x] GitHub Actions compila y ejecuta todos los tests en cada push
   - [ ] Un test en rojo impide fusionar en `main`
 - [ ] **KAL-004 · Proyecto web con capas y tests** — ADR-33 · S · requiere KAL-001
   - [ ] Vite + React + TypeScript en `web/`, con carpetas `domain/`, `app/`, `infra/` y `ui/`
