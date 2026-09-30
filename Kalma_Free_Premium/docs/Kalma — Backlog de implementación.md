@@ -62,7 +62,7 @@ Antes de la primera línea de lógica, el repositorio ya impide romper la regla 
   - [x] Referencias: Application → Domain; Infrastructure → Application; Api → Infrastructure y Application
   - [x] `dotnet build` y `dotnet test` pasan
   - [x] `kalma-arquitectura.md` copiado a `docs/`
-- [ ] **KAL-002 · Test de arquitectura** — ADR-29 · S · requiere KAL-001
+- [x] **KAL-002 · Test de arquitectura** — ADR-29 · S · requiere KAL-001
   - [x] Falla si Kalma.Domain referencia EF Core, ASP.NET o Infrastructure (p. ej. NetArchTest.Rules)
   - [x] Falla si Application referencia Infrastructure
   - [x] Romperlo a propósito una vez y ver el rojo
