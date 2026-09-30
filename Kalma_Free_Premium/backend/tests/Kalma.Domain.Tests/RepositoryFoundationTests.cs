@@ -45,6 +45,20 @@ public sealed class RepositoryFoundationTests
     }
 
     [Fact]
+    public void Backend_CI_workflow_builds_and_tests_the_solution_on_push_and_main_pull_requests()
+    {
+        var workflow = File.ReadAllText(Path.Combine(RepositoryRoot, ".github", "workflows", "backend-ci.yml"));
+
+        Assert.Contains("push:", workflow, StringComparison.Ordinal);
+        Assert.Contains("pull_request:", workflow, StringComparison.Ordinal);
+        Assert.Contains("branches: [main]", workflow, StringComparison.Ordinal);
+        Assert.Contains("permissions:\n  contents: read", workflow, StringComparison.Ordinal);
+        Assert.Contains("global-json-file: global.json", workflow, StringComparison.Ordinal);
+        Assert.Contains("dotnet build backend/Kalma.sln", workflow, StringComparison.Ordinal);
+        Assert.Contains("dotnet test backend/Kalma.sln", workflow, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void Architecture_document_is_an_exact_copy()
     {
         var authoritative = File.ReadAllBytes(Path.Combine(RepositoryRoot, "docs", "Kalma — Documento de arquitectura.md"));
